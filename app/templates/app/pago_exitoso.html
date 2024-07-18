@@ -1,0 +1,7 @@
+{% extends 'app/base.html' %}
+{% block contenido %}
+<h1>Pago Exitoso</h1>
+<p>El pago del pedido {{ pedido.id }} ha sido completado exitosamente.</p>
+<p>Total: ${{ pedido.total }}</p>
+<a href="{% url 'home' %}">Volver al inicio</a>
+{% endblock %}
