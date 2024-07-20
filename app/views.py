@@ -16,6 +16,8 @@ from paypalrestsdk import Payment
 # Create your views here.
 
 
+def index(request):
+    return render(request, 'app/index.html')
 
 @login_required
 def home(request):
@@ -653,10 +655,12 @@ def pago_exitoso(request, pedido_id):
     if pago.execute({"payer_id": payer_id}):
         pedido.estado = 'pagado'
         pedido.save()
-        return render(request, 'app/pago_exitoso.html', {'pedido': pedido})
+        
+        items = PedidoItem.objects.filter(pedido=pedido)
+        
+        return render(request, 'app/pedido.html', {'pedido': pedido, 'items': items})
     else:
         return render(request, 'app/pago_error.html', {'error': pago.error})
-
 @login_required
 def pago_cancelado(request):
     return render(request, 'app/pago_cancelado.html')

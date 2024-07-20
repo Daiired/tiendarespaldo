@@ -2,15 +2,15 @@ from django.urls import path, include
 from django.shortcuts import redirect
 from . import views
 from .views import home, contacto, galeria, \
- registro, agregar_Alimento, listar_Alimentos,modificar_Alimento, eliminar_Alimento, agregar_Categoria,listar_Categorias, modificar_Categoria, eliminar_Categoria, agregar_Dieta, listar_Dietas, modificar_Dieta, eliminar_Dieta,agregar_Libre,listar_Libres,modificar_Libre, eliminar_Libre, agregar_AlimentoDieta, listar_AlimentoDietas, modificar_AlimentoDieta, eliminar_AlimentoDieta,descripcion_producto,agregar_AlimentoLibreDe,listar_AlimentoLibreDe,modificar_AlimentoLibreDe,eliminar_AlimentoLibreDe, ver_carrito, agregar_al_carrito,eliminar_del_carrito, realizar_pedido, ver_pedido, procesar_pago,pago_exitoso,pago_cancelado
+ registro, agregar_Alimento, listar_Alimentos,modificar_Alimento, eliminar_Alimento, agregar_Categoria,listar_Categorias, modificar_Categoria, eliminar_Categoria, agregar_Dieta, listar_Dietas, modificar_Dieta, eliminar_Dieta,agregar_Libre,listar_Libres,modificar_Libre, eliminar_Libre, agregar_AlimentoDieta, listar_AlimentoDietas, modificar_AlimentoDieta, eliminar_AlimentoDieta,descripcion_producto,agregar_AlimentoLibreDe,listar_AlimentoLibreDe,modificar_AlimentoLibreDe,eliminar_AlimentoLibreDe, ver_carrito, agregar_al_carrito,eliminar_del_carrito, realizar_pedido, ver_pedido, procesar_pago,pago_exitoso,pago_cancelado, index
 
 def redirect_to_login(request):
     return redirect('/accounts/login/')
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('',index , name='index'),
 
-    path('', redirect_to_login, name="redirect_to_login"),
+    path('login/', redirect_to_login, name="redirect_to_login"),
     path('accounts/', include('django.contrib.auth.urls')),
     path('home/', home, name="home"),
     path('contacto/', contacto, name="contacto"),
