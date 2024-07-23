@@ -46,7 +46,7 @@ footer i {
 #hero{
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.329), rgba(0, 0, 0, 0.233)), url('../img/Banner/Banner.jpg') no-repeat center / cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.329), rgba(0, 0, 0, 0.233)), url('../img/banner/Banner.jpg') no-repeat center / cover;
     color: white;
     background-position: top;
     max-height: 700px;
